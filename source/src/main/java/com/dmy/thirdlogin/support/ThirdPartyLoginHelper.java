@@ -106,7 +106,7 @@ public final class ThirdPartyLoginHelper {
 	 * 获取QQ的认证token和用户OpenID
 	 * 
 	 * @param code
-	 * @param type
+	 * @param host
 	 * @return
 	 */
 	public static final Map<String, String> getQQTokenAndOpenid(String code, String host) throws Exception {
@@ -139,7 +139,7 @@ public final class ThirdPartyLoginHelper {
 	 * 获取微信的认证token和用户OpenID
 	 * 
 	 * @param code
-	 * @param type
+	 * @param host
 	 * @return
 	 */
 	public static final Map<String, String> getWxTokenAndOpenid(String code, String host) throws Exception {
@@ -164,7 +164,7 @@ public final class ThirdPartyLoginHelper {
 	 * 获取新浪登录认证token和用户id
 	 * 
 	 * @param code
-	 * @param type
+	 * @param host
 	 * @return
 	 */
 	public static final JSONObject getSinaTokenAndUid(String code, String host) {

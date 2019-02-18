@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import io.swagger.annotations.ApiParam;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -31,8 +32,9 @@ public class ThirdPartyLoginController  {
 
 	@RequestMapping("/sns")
 	@ApiOperation(value = "用户登录", httpMethod = "GET")
-	public void thirdLogin(HttpServletRequest request, HttpServletResponse response, @RequestParam("t") String type) {
+	public void thirdLogin(HttpServletRequest request, HttpServletResponse response, @ApiParam("登录类型：wx、qq、sina") @RequestParam("t") String type) {
 		String url = getRedirectUrl(request, type);
+		System.out.println(">>>>>>>>>>>重定向到微信开放平台-->" + url);
 		try {
 			response.sendRedirect(url);
 		} catch (IOException e) {
